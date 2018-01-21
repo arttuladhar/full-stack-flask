@@ -1,0 +1,16 @@
+<html>
+    <head><title>My Tiny Journal</title></head>
+    <body>
+    <h2>My Tiny Journal</h2>
+    {% if user %}
+    <h4>Welcome, {{ user }} !! </h4>
+    {% endif %}
+    <div>
+        <a href="/">Home</a>
+        <a href="/entry/today">Add Entry</a>
+    </div>
+    <hr>
+    {% block content %}
+    {% endblock %}
+    </body>
+</html>
