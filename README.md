@@ -7,12 +7,11 @@ python -m venv venv
 
 ```
 source venv/bin/activate
-venv\Scripts\activate
 ```
 
-# Installing Flask
+# Installing Requirements
 ```
-pip install flask
+pip install -r requirements.txt
 ```
 
 # Running Hello World
