@@ -1,22 +1,19 @@
 # Create Virtual Env
-```
+
+```bash
+
+# Creating New Virtual Env
 python -m venv venv
-```
 
 # Activating Virtual Env
-
-```
 source venv/bin/activate
-```
 
 # Installing Requirements
-```
 pip install -r requirements.txt
-```
 
-# Running Hello World
-```
+# Running App
 FLASK_APP=mytinyjournal.py flask run
+
 ```
 
 ----

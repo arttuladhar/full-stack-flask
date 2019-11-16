@@ -1,8 +1,12 @@
+<!-- Extends from Base Layout -->
 {% extends "base.html" %}
+
 {% block content %}
     <h2>Add Entry for Today ({{ today_date }}) </h2>
-
-    <textarea rows="6" cols="75">
-    </textarea>
-
+    <form action="" method="post" name="addentry">
+        {{ form.hidden_tag() }}
+        <textarea name="entry_text" rows="6" cols="75">            
+        </textarea>
+        <p><input type="submit" value="Post"></p>
+    </form>
 {% endblock %}

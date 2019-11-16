@@ -1,7 +1,7 @@
-from wtforms import Form, StringField, TextAreaField, validators
+from flask_wtf import Form
+from wtforms import StringField, TextAreaField, validators
 from wtforms.validators import DataRequired
 
 class AddEntryForm(Form):
-    entry_mood = StringField('mood', validators=[DataRequired])
-    entry_text = TextAreaField('entry_text')
+    entry_text = TextAreaField('entry_text', validators=[DataRequired()])
 
