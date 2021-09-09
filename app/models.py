@@ -9,3 +9,7 @@ class User(db.Model):
         return {
             "id": self.id, "username": self.username, "email": self.email
         }
+
+class Entry(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    text = db.Column(db.String(1000), nullable=False)
