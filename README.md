@@ -12,7 +12,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 
 # Running App
-FLASK_APP=mytinyjournal.py flask run
+FLASK_APP=app.py flask run
 
 ```
 

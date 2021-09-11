@@ -10,17 +10,19 @@ from .models import User, Entry
 
 @app.cli.command("initdb")
 def initdb():
-
+    
     # Creating Seed Data
-    for num in range(10):
-        db.session.add(User(username='Flask' + str(num), email='flask' + str(num) + '@gmail.com'))
-        db.session.commit()
-
+    db.session.add(User(username='Flask', email='flask@gmail.com'))
     db.session.add(Entry(text='Hello World'))
     db.session.commit()
-
+    
     db.create_all()
-    print ("Created Tables")
+    print ("Tables Created")
+
+@app.cli.command("dropdb")
+def initdb():    
+    db.drop_all()
+    print ("Tables Deleted")
 
 # Hello World Endpoint
 @app.route('/hello')
@@ -30,10 +32,13 @@ def hello():
 # render_template - Renders Template from template folder
 @app.route('/')
 def index():
-    entries = []
-    entries = Entry.query.all()
-    print(entries)
-    return render_template('index.html', user='Aayush', entries=entries)
+    try:
+        entries = []
+        entries = Entry.query.all()
+        print(entries)
+        return render_template('index.html', user='Aayush', entries=entries)
+    except Exception as e:
+        print("Error: " + e)
 
 @app.route('/users')
 def get_users():
@@ -47,8 +52,11 @@ def add_entry():
     form = AddEntryForm(request.form)
     if request.method == 'POST' and form.validate():        
         print("Something got added: " + form.entry_text.data)
-        db.session.add(Entry(text=form.entry_text.data))
-        db.session.commit()
+        try:
+            db.session.add(Entry(text=form.entry_text.data))
+            db.session.commit()
+        except Exception as e:
+            print ("Error: " + e)        
         return redirect('/')
 
     today_date = datetime.now().date()
