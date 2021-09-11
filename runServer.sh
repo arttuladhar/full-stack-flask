@@ -1,3 +1,3 @@
 #!/bin/bash
 
-FLASK_APP=mytinyjournal.py flask run
+FLASK_APP=app.py flask run

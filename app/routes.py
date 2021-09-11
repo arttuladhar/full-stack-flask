@@ -12,9 +12,9 @@ from .models import User, Entry
 def initdb():
 
     # Creating Seed Data
-    # for num in range(10):
-    #     db.session.add(User(username='Flask' + str(num), email='flask' + str(num) + '@gmail.com'))
-    #     db.session.commit()
+    for num in range(10):
+        db.session.add(User(username='Flask' + str(num), email='flask' + str(num) + '@gmail.com'))
+        db.session.commit()
 
     db.session.add(Entry(text='Hello World'))
     db.session.commit()

@@ -18,6 +18,13 @@ FLASK_APP=mytinyjournal.py flask run
 
 ----
 
+## Setup
+
+Create a folder for your SQL lite database and update `INSTANCE_FOLDER_PATH` in the config file. Run `flask initdb` command to create tables and seed test data.
+
+```
+flask initdb
+```
 ## Hello World
 
 ## Using Templates
