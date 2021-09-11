@@ -1,3 +1,3 @@
 #!/bin/bash
 
-FLASK_APP=app.py flask run
+ENV=DEV && FLASK_APP=app.py flask run
