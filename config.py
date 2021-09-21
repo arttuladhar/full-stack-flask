@@ -1,6 +1,6 @@
 from os import environ
 
-INSTANCE_FOLDER_PATH = '/tmp/db/tiny-journal'
+INSTANCE_FOLDER_PATH = '/Users/arttuladhar/tmp/db'
 
 WTF_CSRF_ENABLED = True
 SECRET_KEY = 'you-will-never-guess'

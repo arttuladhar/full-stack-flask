@@ -1,12 +1,23 @@
 {% extends "base.html" %}
 
-    {% block content %}
-    <h2>Posts</h2>
-    {% if entries %}
-        <h3>My Posts</h3>
-        {% for entry in entries %}
-        <li> {{ entry.text }} </li>
-        {% endfor %}
-    {% endif %}
-    {% endblock %}
+{% block content %}
 
+<h2>Entries</h2>
+
+{% if entries %}
+<h3>My Posts</h3>
+<div style="border-spacing: 10px;">
+    {% for entry in entries %}
+    <div class="d-flex flex-row mt-4 bg-light retro">
+        <div class="p-1">
+            <blockquote class="blockquote">
+                <p class="mb-o">{{ entry.text }}</p>
+            </blockquote>
+        </div>
+        <div class="ml-auto p-1"><button type="button" class="btn btn-secondary">Delete</button></div>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+{% endblock %}

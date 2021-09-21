@@ -1,3 +1,6 @@
 #!/bin/bash
 
-ENV=DEV && FLASK_APP=app.py flask run
+export FLASK_ENV=development
+export FLASK_APP=app.py
+
+ENV=DEV && flask run
