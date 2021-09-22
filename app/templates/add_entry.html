@@ -3,8 +3,12 @@
 
 {% block content %}
     <h2>Add Entry for Today ({{ today_date }}) </h2>
+
     <form action="" method="post" name="addentry">
-        {{ form.entry_text }}
-        <input type="submit" value="Submit">
+        <div class="form-group green-border-focus">
+        {{ form.entry_text(rows=10, class_="form-control") }}
+        <hr>
+        <input type="submit" class="btn btn-primary btn-lg" value="Submit">
+        </div>
     </form>
 {% endblock %}

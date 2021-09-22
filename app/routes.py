@@ -38,7 +38,7 @@ def index():
         print(entries)
         return render_template('index.html', user='Aayush', entries=entries)
     except Exception as e:
-        print("Error: " + e)
+        print(e)
 
 @app.route('/users')
 def get_users():

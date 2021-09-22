@@ -5,4 +5,4 @@ INSTANCE_FOLDER_PATH = '/Users/arttuladhar/tmp/db'
 WTF_CSRF_ENABLED = True
 SECRET_KEY = 'you-will-never-guess'
 
-SQLALCHEMY_DATABASE_URI = environ.get('SQLALCHEMY_DATABASE_URI') or 'sqlite:///' + INSTANCE_FOLDER_PATH + '/db.sqlite'
+SQLALCHEMY_DATABASE_URI = environ.get('SQLALCHEMY_DATABASE_URI') or 'sqlite:///' + INSTANCE_FOLDER_PATH + '/tiny-db.sqlite'
