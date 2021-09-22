@@ -61,3 +61,13 @@ def add_entry():
 
     today_date = datetime.now().date()
     return render_template('add_entry.html', today_date=today_date, form=form)
+
+@app.route("/entry/<entry_id>", methods=["DELETE"])
+def delete_entry(entry_id):
+    try:
+        Entry.query.filter_by(id=entry_id).delete()
+        db.session.commit()
+        return "Entry: " + entry_id + " Deleted"
+    except Exception as e:
+        print(e)
+        return "Error" + str(e)
